@@ -1,31 +1,28 @@
-// Создаем пункт меню при установке расширения
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: "pasteCustomList",
-    title: "Вставить список слов",
+    title: "Paste word list",
     contexts: ["editable"]
   });
 });
 
-// Обработка клика по контекстному меню
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (info.menuItemId === "pasteCustomList") {
-    
-    // Получаем сохраненный текст
     chrome.storage.sync.get(["customWordList"], (data) => {
       const text = data.customWordList || "";
-      
-      // Разбиваем текст на строки, убираем пробелы по краям и отфильтровываем пустые строки
-      const words = text.split('\n').map(w => w.trim()).filter(w => w.length > 0);
-      
-      if (words.length === 0) return;
+      const words = text.split("\n").map((word) => word.trim()).filter((word) => word.length > 0);
 
-      // Выполняем скрипт вставки на активной странице
+      if (words.length === 0) {
+        return;
+      }
+
       chrome.scripting.executeScript({
         target: { tabId: tab.id },
         func: async (list) => {
           const el = document.activeElement;
-          if (!el) return;
+          if (!el) {
+            return;
+          }
 
           const simulateInput = (word) => {
             const inputEvent = new InputEvent("input", {
@@ -44,7 +41,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 
           for (const word of list) {
             simulateInput(word);
-            await new Promise((r) => setTimeout(r, 39));
+            await new Promise((resolve) => setTimeout(resolve, 39));
           }
         },
         args: [words]
