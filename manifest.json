@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "List Inserter",
-  "version": "1.0.0",
-  "description": "Inserts a list of words line by line into an input",
+  "name": "Multi-Line Auto Typer",
+  "version": "1.1.0",
+  "description": "Inserts list items line by line into focused editable fields",
   "permissions": [
     "contextMenus",
     "scripting",
@@ -10,7 +10,8 @@
     "storage"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
   },
   "action": {
     "default_popup": "popup.html",
