@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Вставлятор списка",
+  "version": "1.0.0",
+  "description": "Вставляет список слов построчно в поле",
+  "permissions": [
+    "contextMenus",
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Настройки списка",
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}
