@@ -2,103 +2,29 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <title>Word List</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #1e1e1e;
-      --text: #e8eaed;
-      --muted: #a7adb4;
-      --textarea-bg: #121212;
-      --textarea-border: #3a3a3a;
-      --button-bg: #2196f3;
-      --button-hover: #1976d2;
-      --toggle-bg: #303134;
-    }
-
-    html[data-theme="light"] {
-      color-scheme: light;
-      --bg: #f4f4f4;
-      --text: #1f1f1f;
-      --muted: #2e7d32;
-      --textarea-bg: #ffffff;
-      --textarea-border: #cccccc;
-      --button-bg: #2196f3;
-      --button-hover: #0d47a1;
-      --toggle-bg: #e5e5e5;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 15px;
-      width: 300px;
-      background-color: var(--bg);
-      color: var(--text);
-      position: relative;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    #themeToggle {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      border: none;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      cursor: pointer;
-      background: var(--toggle-bg);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1;
-    }
-
-    #wordList {
-      width: 100%;
-      height: 200px;
-      resize: vertical;
-      margin: 28px 0 10px;
-      padding: 8px;
-      box-sizing: border-box;
-      border: 1px solid var(--textarea-border);
-      border-radius: 4px;
-      font-family: monospace;
-      white-space: pre-wrap;
-      background: var(--textarea-bg);
-      color: var(--text);
-    }
-
-    #saveBtn {
-      width: 100%;
-      padding: 10px;
-      background: var(--button-bg);
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-
-    #saveBtn:hover {
-      background: var(--button-hover);
-    }
-
-    #status {
-      margin-top: 10px;
-      font-size: 12px;
-      color: var(--muted);
-      text-align: center;
-      height: 15px;
-    }
-  </style>
+  <title>List Inserter Settings</title>
+  <link rel="stylesheet" href="styles/popup.css" />
 </head>
 <body>
   <button id="themeToggle" type="button" aria-label="Switch to light theme">☀️</button>
-  <textarea id="wordList" placeholder="Word1&#10;Word2&#10;Word3"></textarea>
-  <button id="saveBtn">Save</button>
-  <div id="status"></div>
 
-  <script src="popup.js"></script>
+  <label class="fieldLabel" for="wordList">List entries</label>
+  <textarea id="wordList" placeholder="Item 1&#10;Item 2&#10;Item 3"></textarea>
+
+  <div class="row">
+    <label class="fieldLabel" for="delayMs">Delay between entries (ms)</label>
+    <input id="delayMs" type="number" min="0" max="5000" step="1" value="40" />
+  </div>
+
+  <label class="checkboxRow" for="skipDuplicates">
+    <input id="skipDuplicates" type="checkbox" />
+    Skip duplicate lines
+  </label>
+
+  <button id="saveBtn" type="button">Save</button>
+  <div id="wordCount" aria-live="polite"></div>
+  <div id="status" aria-live="polite"></div>
+
+  <script type="module" src="src/popup/app.js"></script>
 </body>
 </html>
