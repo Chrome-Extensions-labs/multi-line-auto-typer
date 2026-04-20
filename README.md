@@ -2,6 +2,9 @@
 
 > Insert newline-delimited entries into focused editable fields with deterministic pacing, optional deduplication, and a one-click context-menu workflow.
 
+[![Chrome Store](https://img.shields.io/badge/platform-Chrome_Extension-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/search/OstinUA)
+[![Chrome Portfolio](https://img.shields.io/badge/Chrome_Web_Store-Portfolio-34A853?style=for-the-badge&logo=google-chrome&logoColor=white)](https://ostinua.github.io/Chrome-Web-Store_Developer-List/)
+
 [![Version](https://img.shields.io/badge/Version-1.1.0-2ea44f?style=for-the-badge)](manifest.json)
 [![Manifest](https://img.shields.io/badge/Chrome_Extension-MV3-4285F4?style=for-the-badge&logo=googlechrome)](manifest.json)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge)](LICENSE)
