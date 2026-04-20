@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Вставлятор списка",
+  "name": "List Inserter",
   "version": "1.0.0",
-  "description": "Вставляет список слов построчно в поле",
+  "description": "Inserts a list of words line by line into an input",
   "permissions": [
     "contextMenus",
     "scripting",
@@ -14,7 +14,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Настройки списка",
+    "default_title": "List settings",
     "default_icon": {
       "128": "icons/icon128.png"
     }
