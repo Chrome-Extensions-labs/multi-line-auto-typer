@@ -31,10 +31,10 @@ export const parseWordList = (rawText, { skipDuplicates = DEFAULTS.skipDuplicate
   return parsedItems;
 };
 
-export const sanitizeDelay = (value) => {
+export const sanitizeDelay = (value, fallback = DEFAULTS.insertionDelayMs) => {
   const parsed = Number(value);
   if (!Number.isFinite(parsed) || parsed < 0) {
-    return DEFAULTS.insertionDelayMs;
+    return fallback;
   }
   return Math.min(Math.round(parsed), 5000);
 };

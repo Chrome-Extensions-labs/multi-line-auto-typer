@@ -8,7 +8,18 @@
 <body>
   <button id="themeToggle" type="button" aria-label="Switch to light theme">☀️</button>
 
-  <label class="fieldLabel" for="wordList">List entries</label>
+  <label class="fieldLabel" for="profileSelect">Active profile</label>
+  <select id="profileSelect" aria-label="Active profile"></select>
+  <div class="profileActions">
+    <button id="newProfile" type="button">New</button>
+    <button id="duplicateProfile" type="button">Duplicate</button>
+    <button id="deleteProfile" type="button">Delete</button>
+  </div>
+
+  <label class="fieldLabel" for="profileName">Profile name</label>
+  <input id="profileName" type="text" maxlength="50" />
+
+  <label class="fieldLabel" for="wordList">List entries (one per line)</label>
   <textarea id="wordList" placeholder="Item 1&#10;Item 2&#10;Item 3"></textarea>
 
   <div class="row">
@@ -16,12 +27,23 @@
     <input id="delayMs" type="number" min="0" max="5000" step="1" value="40" />
   </div>
 
+  <div class="row">
+    <label class="fieldLabel" for="enterDelayMs">Wait before Enter (ms)</label>
+    <input id="enterDelayMs" type="number" min="0" max="5000" step="1" value="100" />
+  </div>
+
   <label class="checkboxRow" for="skipDuplicates">
     <input id="skipDuplicates" type="checkbox" />
     Skip duplicate lines
   </label>
 
-  <button id="saveBtn" type="button">Save</button>
+  <label class="checkboxRow" for="pressEnter">
+    <input id="pressEnter" type="checkbox" />
+    Press Enter after each entry
+  </label>
+  <div class="hint">With Enter off, entries are inserted together as lines. Chrome may show a debugging notice while sending real Enter presses.</div>
+
+  <button id="saveBtn" type="button">Save changes</button>
   <div id="wordCount" aria-live="polite"></div>
   <div id="status" aria-live="polite"></div>
 

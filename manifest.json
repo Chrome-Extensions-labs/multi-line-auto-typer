@@ -1,13 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Multi-Line Auto Typer",
-  "version": "1.1.2",
-  "description": "Inserts list items line by line into focused editable fields",
+  "version": "1.2.0",
+  "description": "Inserts entries from selectable profiles into focused editable fields",
   "permissions": [
     "contextMenus",
     "scripting",
     "activeTab",
-    "storage"
+    "storage",
+    "debugger"
   ],
   "background": {
     "service_worker": "src/background/service-worker.js",

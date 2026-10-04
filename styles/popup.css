@@ -74,7 +74,10 @@ body {
   margin-bottom: 10px;
 }
 
-#delayMs {
+#delayMs,
+#enterDelayMs,
+#profileSelect,
+#profileName {
   width: 100%;
   box-sizing: border-box;
   padding: 8px;
@@ -82,6 +85,38 @@ body {
   border: 1px solid var(--textarea-border);
   background: var(--textarea-bg);
   color: var(--text);
+}
+
+.profileActions {
+  display: flex;
+  gap: 6px;
+  margin-top: 7px;
+}
+
+.profileActions button {
+  flex: 1;
+  padding: 7px 4px;
+  border: 1px solid var(--textarea-border);
+  border-radius: 4px;
+  background: var(--toggle-bg);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.profileActions button:hover {
+  filter: brightness(1.15);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hint {
+  margin: -7px 0 10px 24px;
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--muted);
 }
 
 .checkboxRow {
