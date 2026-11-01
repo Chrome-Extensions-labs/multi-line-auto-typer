@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Multi-Line Auto Typer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Inserts entries from selectable profiles into focused editable fields",
   "homepage_url": "https://github.com/Chrome-Extensions-labs/multi-line-auto-typer",
   "permissions": [
